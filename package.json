@@ -8,10 +8,7 @@
     "dist": "gulp dist",
     "demos": "gulp demos",
     "watch": "gulp watch",
-    "dev": "gulp dev",
-    "build": "browserify ./src/webrtc.js -t babelify --outfile dist/bundle.js",
-    "build-demos": "browserify ./src/webrtc.js -t babelify --outfile demos/bundle.js",
-    "build-demos-watch": "browserify ./src/webrtc.js -t babelify --outfile demos/bundle.js"
+    "dev": "gulp dev"
   },
   "keywords": [
     "webrtc",

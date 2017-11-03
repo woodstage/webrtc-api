@@ -12,27 +12,21 @@
 <!--HTML5 charset def-->
 <meta charset="UTF-8">
 <link rel="icon" href="/assets/icon.ico" type="image/x-icon">
-<title>Media stream</title>
+<title>WebRTC demos using the API</title>
 <link rel="stylesheet" type="text/css" href="./style.css" >
 </head>
 <body>
 
-<video id="video" autoplay></video>
+<ul>
+  <li><a href="https://woodstage.github.io/webrtc-api/media_stream.html" target="_blank">Media stream</a></li>
+  <li><a href="https://woodstage.github.io/webrtc-api/snap_video.html" target="_blank">Snapshot of video stream</a></li>
+  <li><a href="https://woodstage.github.io/webrtc-api/record_video.html" target="_blank">Record video and replay</a></li>
+  <li><a href="https://woodstage.github.io/webrtc-api/stream_over_connection.html" target="_blank">Share stream via peerconnection</a></li>
+</ul>
 
 </body>
-<script type="text/javascript" src="./bundle.js"></script>
 <script type="text/javascript">
  document.addEventListener('DOMContentLoaded', function () {
-   var videoDom = document.getElementById('video');
-   var mediaStream = new webrtc.MediaStream({ video: true, audio: false });
-   mediaStream.initialize()
-    .then(function (stream) {
-        if (window.URL) {
-            videoDom.src = window.URL.createObjectURL(stream);
-        } else {
-            videoDom.srcObject = stream;
-        }
-    })
  })
 </script>
 </html>
