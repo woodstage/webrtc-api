@@ -1,0 +1,39 @@
+{
+  "name": "webrtc",
+  "version": "0.0.0",
+  "description": "Encapsulated webrtc API",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "dist": "gulp dist",
+    "demos": "gulp demos",
+    "watch": "gulp watch",
+    "dev": "gulp dev",
+    "build": "browserify ./src/webrtc.js -t babelify --outfile dist/bundle.js",
+    "build-demos": "browserify ./src/webrtc.js -t babelify --outfile demos/bundle.js",
+    "build-demos-watch": "browserify ./src/webrtc.js -t babelify --outfile demos/bundle.js"
+  },
+  "keywords": [
+    "webrtc",
+    "API",
+    "encapsulated",
+    "promise"
+  ],
+  "author": "woodstage",
+  "license": "MIT",
+  "dependencies": {
+    "webrtc-adapter": "^5.0.6"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browser-sync": "^2.18.13",
+    "browserify": "^14.5.0",
+    "browserify-shim": "^3.8.14",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-rename": "^1.2.2"
+  }
+}

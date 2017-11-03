@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="application-name" content="snow white">
+<meta name="generator" content="wang pin">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+<meta name="author" content="wang pin">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--HTML4 charset def-->
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<!--HTML5 charset def-->
+<meta charset="UTF-8">
+<link rel="icon" href="/assets/icon.ico" type="image/x-icon">
+<title></title>
+<link rel="stylesheet" type="text/css" href="/style.css" >
+</head>
+<body>
+
+<video id="video" autoplay></video>
+<button id="snap">snap</button>
+<canvas id="drawer" style="display: none;"></canvas>
+<image id="paper" src=""/>
+
+</body>
+<script type="text/javascript" src="/bundle.js"></script>
+<script type="text/javascript">
+ document.addEventListener('DOMContentLoaded', function () {
+   var video = document.getElementById('video');
+   var snapBtn = document.getElementById('snap');
+   var drawer = document.getElementById('drawer');
+   var paper = document.getElementById('paper');
+
+   var mediaStream = new webrtc.MediaStream({ video: true, audio: false });
+   mediaStream.initialize()
+    .then(function (stream) {
+        if (window.URL) {
+            video.src = window.URL.createObjectURL(stream);
+        } else {
+            video.srcObject = stream;
+        }
+    })
+
+    snapBtn.addEventListener('click', function () {
+      drawer.width = video.clientWidth;
+      drawer.height = video.clientHeight;
+
+      drawer.getContext('2d').drawImage(video, 0, 0, video.clientWidth, video.clientHeight)
+      var dataURI = undefined;
+      try {
+          dataURI = drawer.toDataURL('image/jpeg')
+      } catch (err) {
+          dataURI = drawer.toDataURL('image/png')
+      }
+
+      if (dataURI) {
+        paper.src = dataURI;
+      }
+        
+    })
+
+ })
+</script>
+</html>
