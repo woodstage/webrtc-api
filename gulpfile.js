@@ -36,7 +36,7 @@ gulp.task('demos', function() {
           insertGlobals : true
         }))
         .pipe(rename('bundle.js'))
-        .pipe(gulp.dest('demos'))
+        .pipe(gulp.dest('docs'))
 });
 
 // Rerun the task when a file changes
