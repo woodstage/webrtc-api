@@ -1,5 +1,5 @@
 var gulp        = require('gulp');
-var rename = require("gulp-rename");
+var rename = require('gulp-rename');
 var browserSync = require('browser-sync').create();
 var browserify = require('gulp-browserify');
 
@@ -7,7 +7,7 @@ var browserify = require('gulp-browserify');
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
-            baseDir: "demos"
+            baseDir: 'docs'
         }
     });
 });
