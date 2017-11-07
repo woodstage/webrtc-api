@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="application-name" content="snow white">
+<meta name="generator" content="wang pin">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+<meta name="author" content="wang pin">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--HTML4 charset def-->
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<!--HTML5 charset def-->
+<meta charset="UTF-8">
+<link rel="icon" href="/assets/icon.ico" type="image/x-icon">
+<title>Datachannel for exchange text message</title>
+<link rel="stylesheet" type="text/css" href="./style.css" >
+<link rel="stylesheet" type="text/css" href="./chat.css" >
+<style>
+
+  .client {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+  }
+
+</style>
+</head>
+<body>
+
+<div id="client-a" class="client">
+  <h1>Client A</h1>
+  <ol id="messages-a" class="messages">
+
+  </ol>
+  <textarea id="inputarea-a" class="inputarea">
+
+  </textarea>
+  <span id="send-btn-a" class="button">Send</span>
+</div>
+
+<div id="client-b" class="client">
+  <h1>Client B</h1>
+  <ol id="messages-b" class="messages">
+
+  </ol>
+  <textarea id="inputarea-b" class="inputarea">
+
+  </textarea>
+  <span id="send-btn-b" class="button">Send</span>
+</div>
+
+</body>
+<script type="text/javascript" src="./bundle.js"></script>
+<script type="text/javascript">
+ document.addEventListener('DOMContentLoaded', function () {
+   
+   var messagesA = document.getElementById('messages-a');
+   var messagesB = document.getElementById('messages-b');
+   var inputareaA = document.getElementById('inputarea-a');
+   var inputareaB = document.getElementById('inputarea-b');
+   var sendA = document.getElementById('send-btn-a');
+   var sendB = document.getElementById('send-btn-b');
+
+   var connA = new webrtc.PeerConnection();
+   var connB = new webrtc.PeerConnection(); 
+   var channelA = new webrtc.DataChannel(connA, 'message');;
+   var channelB;
+   var answer;
+
+   channelA.onmessage = function (event, data) {
+     console.log(data);
+   }
+
+   connA.onicecandidate = function (candidate) {
+     connB.setRemoteCandidate(candidate);
+   }
+
+   connB.onicecandidate = function (candidate) {
+     connA.setRemoteCandidate(candidate);
+   }
+
+   connA.initialize()
+    .then(function() {
+
+      channelA.initialize();
+
+      connA.createOffer()
+        .then(function(offer) {
+          connB.initialize()
+            .then(function() {
+              connB.setRemoteSDP(offer)
+              connB.createAnswer().then(answer => {
+                connA.setRemoteSDP(answer);
+              })
+              connB.ondatachannel = function(datachannel) {
+                channelB = datachannel;
+
+                channelB.onmessage = function (event, data) {
+                  console.log(data);
+                }
+              }
+            })
+        })
+    })
+
+    sendA.addEventListener('click', function () {
+      var message = inputareaA.value;
+      inputareaA.value = '';
+      channelA && channelA.sendMessage(message);
+    })
+
+    sendB.addEventListener('click', function () {
+      var message = inputareaB.value;
+      inputareaA.value = '';
+      channelB && channelB.sendMessage(message);
+    })
+
+ })
+</script>
+</html>

@@ -1,7 +1,14 @@
- body {
+ html, document,body {
   margin: 0; /* Remove default margin */
  }
+
+ ul, ol {
+   margin: 0;
+   padding: 0;
+ }
+
  video {
    width: 500px;
    height: 430px;
  }
+

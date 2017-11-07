@@ -1,0 +1,36 @@
+.messages {
+  display: inline-block;
+
+  min-width: 120px;
+  min-height: 160px;
+
+  /*outline: #4a148c solid 4px, #4a148c solid 4px;
+  outline-offset: 4px;*/
+  box-shadow: 0 0 0 1px #90caf9;
+}
+
+.inputarea {
+  font-size: 12px;
+  min-width: 120px;
+  min-height: 32px;
+
+  box-shadow: 0 0 0 4px #90caf9;
+}
+
+.button {
+  display: inline-block;
+  
+  min-width: 48px;
+  min-height: 32px;
+  line-height: 32px;
+
+  border-radius: 0 4px 0 4px;
+
+  background-color: #1e88e5;
+  color: #e3f2fd;
+
+  font-size: 12px;
+  text-align: center;
+
+  cursor: pointer;
+}

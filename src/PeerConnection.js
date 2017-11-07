@@ -1,4 +1,5 @@
-import { isFunction } from './utils'
+import DataChannel from './DataChannel'
+import * as _ from 'lodash'
 
 export default class PeerConnection {
 
@@ -29,18 +30,15 @@ export default class PeerConnection {
       if (!this.isCandidateFired && event.candidate && event.candidate.candidate) {
         this.isCandidateFired = true;
         this.candidate = event.candidate
-        isFunction(this.onicecandidate) && this.onicecandidate(this.candidate);
+        _.isFunction(this.onicecandidate) && this.onicecandidate(this.candidate);
       }
     }
 
     conn.ondatachannel = (event) => {
-      let channel = event.channel;
+      let channel = new DataChannel(null, null, event.channel);
+      channel.initialize();
       if (channel) {
-        this.dataChannel = channel;
-        isFunction(this.ondatachannel) && this.ondatachannel(channel);
-        channel.onclose = () => {
-          isFunction(this.ondatachannelclose) && this.ondatachannelclose();
-        }
+        _.isFunction(this.ondatachannel) && this.ondatachannel(channel);
       }
     }
 
@@ -48,7 +46,7 @@ export default class PeerConnection {
       let stream = event.stream;
       if (stream) {
         this.stream = stream;
-        isFunction(this.onaddstream) && this.onaddstream(event);
+        _.isFunction(this.onaddstream) && this.onaddstream(event);
       }
     }
 

@@ -44,14 +44,14 @@
       var calleeCandidate;
       var conn = new webrtc.PeerConnection();
       conn.initialize()
-        .then(() => {
+        .then(function() {
           conn.attachStream(stream);
           conn.createOffer().then(sdp => {
             offer = sdp;
 
             var connA = new webrtc.PeerConnection();
             connA.initialize()
-              .then(() => {
+              .then(function() {
                 connA.setRemoteSDP(offer)
                 connA.createAnswer().then(sdp => {
                   answer = sdp;
