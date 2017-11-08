@@ -1,5 +1,8 @@
 .messages {
-  display: inline-block;
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
 
   min-width: 120px;
   min-height: 160px;
@@ -7,7 +10,72 @@
   /*outline: #4a148c solid 4px, #4a148c solid 4px;
   outline-offset: 4px;*/
   box-shadow: 0 0 0 1px #90caf9;
+  background-color: #fafafa;
 }
+
+.messages li {
+  position: relative;
+  max-width: 80%;
+  list-style: none;
+  margin: 12px 0 12px 0;
+  padding: 8px;
+
+  border-radius: 3px;
+
+  align-self: flex-start;
+
+  text-align: left;
+
+  background-color: #ffffff;
+  box-shadow: 0 0 0 1px #90caf9;
+}
+
+.messages li:before, li:after {
+  position: absolute;
+  bottom: calc(50% - 10px);
+  left: -10px;
+  content: " ";
+  width: 0;
+  height: 0;
+}
+
+.messages li:before {
+  border-top: 10px solid transparent;
+  border-right: 10px solid #90caf9;
+  border-bottom: 10px solid transparent;
+}
+
+.messages li:after {
+  left: -9px;
+  border-top: 10px solid transparent;
+  border-right: 10px solid #ffffff;
+  border-bottom: 10px solid transparent;
+}
+
+.messages li.self {
+  align-self: flex-end;
+  background-color: #81c784;
+  box-shadow: 0 0 0 1px #81c784;
+}
+
+.messages li.self:before, li.self:after {
+  left: auto;
+  right: -10px;
+  border-right: none;
+}
+
+.messages li.self:before {
+  border-top: 10px solid transparent;
+  border-left: 10px solid #81c784;
+  border-bottom: 10px solid transparent;
+}
+
+/*.messages li.self:after {
+  right: -11px;
+  border-top: 10px solid transparent;
+  border-left: 10px solid #81c784;
+  border-bottom: 10px solid transparent;
+}*/
 
 .inputarea {
   font-size: 12px;

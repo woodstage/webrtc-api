@@ -30,7 +30,6 @@
 <div id="client-a" class="client">
   <h1>Client A</h1>
   <ol id="messages-a" class="messages">
-
   </ol>
   <textarea id="inputarea-a" class="inputarea">
 
@@ -68,7 +67,9 @@
    var answer;
 
    channelA.onmessage = function (event, data) {
-     console.log(data);
+    var li = document.createElement('li');
+    li.innerHTML = data;
+    messagesA.appendChild(li);
    }
 
    connA.onicecandidate = function (candidate) {
@@ -96,7 +97,9 @@
                 channelB = datachannel;
 
                 channelB.onmessage = function (event, data) {
-                  console.log(data);
+                  var li = document.createElement('li');
+                  li.innerHTML = data;
+                  messagesB.appendChild(li);
                 }
               }
             })
@@ -107,12 +110,20 @@
       var message = inputareaA.value;
       inputareaA.value = '';
       channelA && channelA.sendMessage(message);
+      var li = document.createElement('li');
+      li.className = 'self';
+      li.innerHTML = message;
+      messagesA.appendChild(li);
     })
 
     sendB.addEventListener('click', function () {
       var message = inputareaB.value;
       inputareaA.value = '';
       channelB && channelB.sendMessage(message);
+      var li = document.createElement('li');
+      li.className = 'self';
+      li.innerHTML = message;
+      messagesB.appendChild(li);
     })
 
  })
