@@ -15389,8 +15389,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.DataChannel = exports.PeerConnection = exports.MediaRecorder = exports.MediaStream = undefined;
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 var _webrtcAdapter = require('webrtc-adapter');
 
 var _webrtcAdapter2 = _interopRequireDefault(_webrtcAdapter);
@@ -15413,7 +15411,7 @@ var _DataChannel2 = _interopRequireDefault(_DataChannel);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-if ((typeof window === 'undefined' ? 'undefined' : _typeof(window)) != undefined) {
+if (typeof window !== 'undefined') {
   window.webrtc = {
     MediaStream: _MediaStream2.default,
     MediaRecorder: _MediaRecorder2.default,
@@ -15426,6 +15424,6 @@ exports.MediaStream = _MediaStream2.default;
 exports.MediaRecorder = _MediaRecorder2.default;
 exports.PeerConnection = _PeerConnection2.default;
 exports.DataChannel = _DataChannel2.default;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZha2VfYzcxNWYzZGIuanMiXSwibmFtZXMiOlsid2luZG93IiwidW5kZWZpbmVkIiwid2VicnRjIiwiTWVkaWFTdHJlYW0iLCJNZWRpYVJlY29yZGVyIiwiUGVlckNvbm5lY3Rpb24iLCJEYXRhQ2hhbm5lbCJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7O0FBQUE7Ozs7QUFDQTs7OztBQUNBOzs7O0FBQ0E7Ozs7QUFDQTs7Ozs7O0FBRUEsSUFBSSxRQUFPQSxNQUFQLHlDQUFPQSxNQUFQLE1BQWlCQyxTQUFyQixFQUFnQztBQUM5QkQsU0FBT0UsTUFBUCxHQUFnQjtBQUNkQyxzQ0FEYztBQUVkQywwQ0FGYztBQUdkQyw0Q0FIYztBQUlkQztBQUpjLEdBQWhCO0FBTUQ7O1FBR0NILFc7UUFDQUMsYTtRQUNBQyxjO1FBQ0FDLFciLCJmaWxlIjoiZmFrZV9jNzE1ZjNkYi5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB3IGZyb20gJ3dlYnJ0Yy1hZGFwdGVyJ1xyXG5pbXBvcnQgTWVkaWFTdHJlYW0gZnJvbSAnLi9NZWRpYVN0cmVhbSdcclxuaW1wb3J0IE1lZGlhUmVjb3JkZXIgZnJvbSAnLi9NZWRpYVJlY29yZGVyJ1xyXG5pbXBvcnQgUGVlckNvbm5lY3Rpb24gZnJvbSAnLi9QZWVyQ29ubmVjdGlvbidcclxuaW1wb3J0IERhdGFDaGFubmVsIGZyb20gJy4vRGF0YUNoYW5uZWwnXHJcblxyXG5pZiAodHlwZW9mIHdpbmRvdyAhPSB1bmRlZmluZWQpIHtcclxuICB3aW5kb3cud2VicnRjID0ge1xyXG4gICAgTWVkaWFTdHJlYW0sXHJcbiAgICBNZWRpYVJlY29yZGVyLFxyXG4gICAgUGVlckNvbm5lY3Rpb24sXHJcbiAgICBEYXRhQ2hhbm5lbFxyXG4gIH1cclxufVxyXG5cclxuZXhwb3J0IHtcclxuICBNZWRpYVN0cmVhbSxcclxuICBNZWRpYVJlY29yZGVyLFxyXG4gIFBlZXJDb25uZWN0aW9uLFxyXG4gIERhdGFDaGFubmVsXHJcbn1cclxuIl19
-}).call(this,require("2ionoC"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_c715f3db.js","/")
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZha2VfZWFkMWNjMDkuanMiXSwibmFtZXMiOlsid2luZG93Iiwid2VicnRjIiwiTWVkaWFTdHJlYW0iLCJNZWRpYVJlY29yZGVyIiwiUGVlckNvbm5lY3Rpb24iLCJEYXRhQ2hhbm5lbCJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBOzs7O0FBQ0E7Ozs7QUFDQTs7OztBQUNBOzs7O0FBQ0E7Ozs7OztBQUVBLElBQUksT0FBT0EsTUFBUCxLQUFrQixXQUF0QixFQUFtQztBQUNqQ0EsU0FBT0MsTUFBUCxHQUFnQjtBQUNkQyxzQ0FEYztBQUVkQywwQ0FGYztBQUdkQyw0Q0FIYztBQUlkQztBQUpjLEdBQWhCO0FBTUQ7O1FBR0NILFc7UUFDQUMsYTtRQUNBQyxjO1FBQ0FDLFciLCJmaWxlIjoiZmFrZV9lYWQxY2MwOS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB3IGZyb20gJ3dlYnJ0Yy1hZGFwdGVyJ1xyXG5pbXBvcnQgTWVkaWFTdHJlYW0gZnJvbSAnLi9NZWRpYVN0cmVhbSdcclxuaW1wb3J0IE1lZGlhUmVjb3JkZXIgZnJvbSAnLi9NZWRpYVJlY29yZGVyJ1xyXG5pbXBvcnQgUGVlckNvbm5lY3Rpb24gZnJvbSAnLi9QZWVyQ29ubmVjdGlvbidcclxuaW1wb3J0IERhdGFDaGFubmVsIGZyb20gJy4vRGF0YUNoYW5uZWwnXHJcblxyXG5pZiAodHlwZW9mIHdpbmRvdyAhPT0gJ3VuZGVmaW5lZCcpIHtcclxuICB3aW5kb3cud2VicnRjID0ge1xyXG4gICAgTWVkaWFTdHJlYW0sXHJcbiAgICBNZWRpYVJlY29yZGVyLFxyXG4gICAgUGVlckNvbm5lY3Rpb24sXHJcbiAgICBEYXRhQ2hhbm5lbFxyXG4gIH1cclxufVxyXG5cclxuZXhwb3J0IHtcclxuICBNZWRpYVN0cmVhbSxcclxuICBNZWRpYVJlY29yZGVyLFxyXG4gIFBlZXJDb25uZWN0aW9uLFxyXG4gIERhdGFDaGFubmVsXHJcbn1cclxuIl19
+}).call(this,require("2ionoC"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_ead1cc09.js","/")
 },{"./DataChannel":19,"./MediaRecorder":20,"./MediaStream":21,"./PeerConnection":22,"2ionoC":3,"buffer":2,"webrtc-adapter":8}]},{},[23])

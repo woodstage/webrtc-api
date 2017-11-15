@@ -1,14 +1,23 @@
 {
-  "name": "webrtc",
-  "version": "0.0.0",
+  "name": "webrtc-api",
+  "version": "0.0.1",
   "description": "Encapsulated webrtc API",
   "main": "index.js",
   "scripts": {
     "test": "npm test",
     "dist": "gulp dist",
+    "build": "gulp build",
     "demos": "gulp demos",
     "watch": "gulp watch",
-    "dev": "gulp dev"
+    "dev": "gulp dev",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:woodstage/webrtc-api"
+  },
+  "bugs": {
+    "url": "https://github.com/woodstage/webrtc-api/issues"
   },
   "keywords": [
     "webrtc",
@@ -30,6 +39,7 @@
     "browserify": "^14.5.0",
     "browserify-shim": "^3.8.14",
     "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
     "gulp-browserify": "^0.5.1",
     "gulp-rename": "^1.2.2"
   }

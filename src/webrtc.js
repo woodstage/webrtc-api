@@ -4,7 +4,7 @@ import MediaRecorder from './MediaRecorder'
 import PeerConnection from './PeerConnection'
 import DataChannel from './DataChannel'
 
-if (typeof window != undefined) {
+if (typeof window !== 'undefined') {
   window.webrtc = {
     MediaStream,
     MediaRecorder,

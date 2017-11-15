@@ -1,6 +1,16 @@
 # webrtc
 webrtc promisify API
 
+[![NPM](https://nodei.co/npm//webrtc-api.png?stars&downloads)](https://nodei.co/npm/webrtc-api/)
+
+[![](https://img.shields.io/travis/woodstage/webrtc-api.svg?style=flat-square)](https://travis-ci.org/woodstage/webrtc-api)
+[![Coveralls](https://img.shields.io/coveralls/woodstage/webrtc-api.svg?style=flat-square)](https://coveralls.io/github/woodstage/webrtc-api)
+
+
+[![npm package](https://img.shields.io/npm/v/webrtc-api.svg?style=flat-square)](https://www.npmjs.org/package/webrtc-api)
+[![NPM downloads](http://img.shields.io/npm/dm/webrtc-api.svg?style=flat-square)](https://npmjs.org/package/webrtc-api)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/woodstage/webrtc-api.svg)](http://isitmaintained.com/project/woodstage/webrtc-api "Average time to resolve an issue")
+
 ## Get to started
 
 ### Initialize media stream
